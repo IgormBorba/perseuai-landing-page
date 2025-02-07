@@ -44,6 +44,15 @@ cp nginx.conf /etc/nginx/sites-available/startup-website
 ln -sf /etc/nginx/sites-available/startup-website /etc/nginx/sites-enabled/
 rm -f /etc/nginx/sites-enabled/default
 
+# Configurando logs do Nginx
+echo -e "${GREEN}Configurando logs do Nginx...${NC}"
+touch /var/log/nginx/error.log
+touch /var/log/nginx/access.log
+chmod 644 /var/log/nginx/error.log
+chmod 644 /var/log/nginx/access.log
+chown www-data:adm /var/log/nginx/error.log
+chown www-data:adm /var/log/nginx/access.log
+
 # Build da aplicação
 echo -e "${GREEN}Instalando dependências do Node.js e buildando a aplicação...${NC}"
 npm ci
@@ -53,11 +62,14 @@ npm run build
 
 # Movendo arquivos buildados
 echo -e "${GREEN}Movendo arquivos para diretório de produção...${NC}"
+rm -rf /var/www/startup-website/*
 cp -r dist/* /var/www/startup-website/
+chown -R www-data:www-data /var/www/startup-website
+chmod -R 755 /var/www/startup-website
 
 # Reiniciando Nginx
 echo -e "${GREEN}Reiniciando Nginx...${NC}"
-systemctl restart nginx
+nginx -t && systemctl restart nginx
 
 echo -e "${GREEN}Deploy concluído com sucesso!${NC}"
 echo -e "${GREEN}Sua aplicação deve estar disponível em: http://perseuai.online${NC}" 
