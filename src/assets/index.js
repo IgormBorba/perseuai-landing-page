@@ -61,7 +61,7 @@ export { default as telegram } from './socials/telegram.svg';
 export { default as twitter } from './socials/twitter.svg';
 
 // General Imports
-export { default as openai } from './openai.svg';
+export { default as openai } from './openai.png';
 export { default as check } from './check.svg';
 export { default as check2 } from './check-02.svg';
 export { default as loading1 } from './loading-01.svg';

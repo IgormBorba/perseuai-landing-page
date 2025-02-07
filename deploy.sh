@@ -16,7 +16,22 @@ fi
 # Instalação de dependências
 echo -e "${GREEN}Instalando dependências...${NC}"
 apt update
-apt install -y nginx nodejs npm
+apt install -y nginx
+
+# Configurando SWAP para evitar problemas de memória
+echo -e "${GREEN}Configurando SWAP...${NC}"
+if [ ! -f /swapfile ]; then
+    fallocate -l 1G /swapfile
+    chmod 600 /swapfile
+    mkswap /swapfile
+    swapon /swapfile
+    echo '/swapfile none swap sw 0 0' >> /etc/fstab
+fi
+
+# Instalando Node.js versão LTS
+echo -e "${GREEN}Instalando Node.js...${NC}"
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt install -y nodejs
 
 # Criando diretório da aplicação
 echo -e "${GREEN}Configurando diretórios...${NC}"
@@ -31,7 +46,9 @@ rm -f /etc/nginx/sites-enabled/default
 
 # Build da aplicação
 echo -e "${GREEN}Instalando dependências do Node.js e buildando a aplicação...${NC}"
-npm install
+npm ci
+npm install -g vite
+export PATH="$PATH:/usr/local/bin"
 npm run build
 
 # Movendo arquivos buildados
@@ -43,4 +60,4 @@ echo -e "${GREEN}Reiniciando Nginx...${NC}"
 systemctl restart nginx
 
 echo -e "${GREEN}Deploy concluído com sucesso!${NC}"
-echo -e "${GREEN}Sua aplicação deve estar disponível em: http://seu-dominio.com${NC}" 
+echo -e "${GREEN}Sua aplicação deve estar disponível em: http://perseuai.online${NC}" 
