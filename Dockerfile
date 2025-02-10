@@ -2,22 +2,29 @@
 FROM node:18-alpine AS builder
 
 WORKDIR /app
+
+# Copiar apenas os arquivos necessários para instalar dependências
 COPY package*.json ./
 
-# Instalar dependências
-RUN npm install
+# Instalar dependências com flags para otimização
+RUN npm install --no-audit --no-fund --production=false \
+    && npm cache clean --force
 
 # Copiar arquivos do projeto
 COPY . .
 
-# Build do projeto
-RUN npm run build
+# Build do projeto e limpar cache
+RUN npm run build \
+    && rm -rf node_modules \
+    && npm install --no-audit --no-fund --production=true \
+    && npm cache clean --force
 
 # Production stage
 FROM nginx:alpine
 
-# Instalar curl para healthcheck
-RUN apk add --no-cache curl
+# Instalar curl para healthcheck e limpar cache
+RUN apk add --no-cache curl \
+    && rm -rf /var/cache/apk/*
 
 # Copiar a configuração do nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
