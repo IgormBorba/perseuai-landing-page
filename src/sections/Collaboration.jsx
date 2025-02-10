@@ -1,4 +1,4 @@
-import { openai, check, curve1, curve2, discord, figma, framer, notion, photoshop, protopie, raindrop, slack } from "../assets";
+import { openai, check, curve1, curve2, discord, whatsapp, framer, notion, photoshop, protopie, raindrop, slack } from "../assets";
 import Button from "../components/Button";
 import Section from "../components/Section";
 
@@ -19,8 +19,8 @@ const collabContent = [
 
 const collabApps = [
     {
-        title: "Figma",
-        icon: figma,
+        title: "WhatsApp",
+        icon: whatsapp,
         width: 26,
         height: 36,
     },
@@ -72,44 +72,44 @@ const Collaboration = () => {
     return (
         <Section crosses>
             <div className="container lg:flex">
-                <div className="max-w-[25rem]">
-                    <h2 className="h2 mb-4 md:mb-8">Revolucione seu Atendimento com IA</h2>
+                <div className="max-w-[25rem] mx-auto lg:mx-0">
+                    <h2 className="h2 mb-4 text-[2rem] leading-tight md:text-[2.5rem] lg:text-[3rem] md:mb-8">Revolucione seu Atendimento com IA</h2>
 
                     <ul className="max-w-[22rem] mb-10 md:mb-14">
                         {collabContent.map((item, i) => (
                             <li className="mb-3 py-3" key={i}>
                                 <div className="flex items-center">
-                                    <img src={check} width={24} height={24} alt="" />
-                                    <h6 className="body-2 ml-5">{item.title}</h6>
+                                    <img src={check} width={24} height={24} alt="" className="w-5 h-5 md:w-6 md:h-6" />
+                                    <h6 className="body-2 ml-5 text-base md:text-lg">{item.title}</h6>
                                 </div>
-                                {item.text && <p className="body-2 mt-3 text-n-4">{item.text}</p>}
+                                {item.text && <p className="body-2 mt-3 text-n-4 text-sm md:text-base">{item.text}</p>}
                             </li>
                         ))}
                     </ul>
 
-                    <Button>
+                    <Button href="https://wa.me/5533984669979?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Perseu.AI" className="w-full max-w-[15rem] md:w-auto">
                         Comece Agora
                     </Button>
 
                 </div>
 
                 <div className="lg:ml-auto xl:w-[38rem] mt-4">
-                    <p className="body-2 mb-8 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">Por isso, desenvolvemos soluções de automação que combinam tecnologia de ponta com a personalização que seus clientes merecem.</p>
+                    <p className="body-2 mb-8 text-n-4 text-sm md:text-base md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">Por isso, desenvolvemos soluções de automação que combinam tecnologia de ponta com a personalização que seus clientes merecem.</p>
 
-                    <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">
-                        <div className="flex w-60 aspect-square m-auto border border-n-6 rounded-full">
-                            <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
+                    <div className="relative left-1/2 flex w-[18rem] md:w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">
+                        <div className="flex w-[15rem] md:w-60 aspect-square m-auto border border-n-6 rounded-full">
+                            <div className="w-[5rem] md:w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
                                 <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
-                                    <img src={openai} width={48} height={48} alt="OpenAI" />
+                                    <img src={openai} width={48} height={48} alt="OpenAI" className="w-10 h-10 md:w-12 md:h-12" />
                                 </div>
                             </div>
                         </div>
 
                         <ul>
                             {collabApps.map((app, index) => (
-                                <li key={index} className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${index * 45}`}>
-                                    <div className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-[#15131D] border border-white/15 rounded-xl -rotate-${index * 45}`}>
-                                        <img className="m-auto" width={app.width} height={app.height} alt={app.title} src={app.icon} />
+                                <li key={index} className={`absolute top-0 left-1/2 h-1/2 -ml-[1.3rem] md:-ml-[1.6rem] origin-bottom rotate-${index * 45}`}>
+                                    <div className={`relative -top-[1.3rem] md:-top-[1.6rem] flex w-[2.6rem] h-[2.6rem] md:w-[3.2rem] md:h-[3.2rem] bg-[#15131D] border border-white/15 rounded-xl -rotate-${index * 45}`}>
+                                        <img className="m-auto w-[60%] h-[60%] md:w-auto md:h-auto" width={app.width} height={app.height} alt={app.title} src={app.icon} />
                                     </div>
                                 </li>
                             ))}

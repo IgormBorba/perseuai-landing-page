@@ -4,30 +4,10 @@ import { discordBlack, facebook, instagram, telegram, twitter } from "../assets"
 
 const socials = [
     {
-        title: "Discord",
-        iconUrl: discordBlack,
-        url: "#",
-    },
-    {
-        title: "Twitter",
-        iconUrl: twitter,
-        url: "#",
-    },
-    {
         title: "Instagram",
         iconUrl: instagram,
-        url: "#",
-    },
-    {
-        title: "Telegram",
-        iconUrl: telegram,
-        url: "#",
-    },
-    {
-        title: "Facebook",
-        iconUrl: facebook,
-        url: "#",
-    },
+        url: "https://www.instagram.com/igor.buy/",
+    }
 ];
 
 const Footer = () => {

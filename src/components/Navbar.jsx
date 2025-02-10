@@ -29,14 +29,8 @@ const navigation = [
     },
     {
         id: "4",
-        title: "Nova conta",
-        url: "#signup",
-        onlyMobile: true,
-    },
-    {
-        id: "5",
-        title: "Entrar",
-        url: "#login",
+        title: "Entrar em contato",
+        url: "https://wa.me/5533984669979",
         onlyMobile: true,
     },
 ];
@@ -104,11 +98,13 @@ const Header = () => {
                     </div>
                 </nav>
 
-                <a href="#signup" className="button hidden mr-8 text-white/50 transition-colors hover:text-white lg:block">
-                    Nova conta
-                </a>
-                <Button className="hidden lg:flex" href="#login">
-                    Entrar
+                <Button 
+                    className="ml-auto" 
+                    href="https://wa.me/5533984669979"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    USAR IA DE VENDAS
                 </Button>
 
                 <Button className="ml-auto lg:hidden" onClick={toggleNavigation}>

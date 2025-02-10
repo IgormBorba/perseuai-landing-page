@@ -2,11 +2,25 @@
 export { default as curve } from './hero/curve.png';
 export { default as robot } from './hero/robot.jpg';
 export { default as heroBackground } from './hero/hero-background.jpg';
+export { default as nexbotRobot } from './hero/nexbot-robot-character-concept.mp4';
+
+// Slides Section
+export { default as slide1 } from './slides/slide1.png';
+export { default as slide2 } from './slides/slide2.png';
+export { default as slide3 } from './slides/slide3.png';
+export { default as slide4 } from './slides/slide4.png';
+
+// Partners Section
+export { default as sunset } from './partners/sunset.png';
+export { default as voxuy } from './partners/voxuy.png';
+export { default as mailchamp } from './partners/mailchamp.png';
+export { default as leadlovers } from './partners/leadlovers.png';
 
 // Collaboration Section
 export { default as curve1 } from './collaboration/curve-1.svg';
 export { default as curve2 } from './collaboration/curve-2.svg';
 export { default as discord } from './collaboration/discord.png';
+export { default as whatsapp } from './collaboration/whatsapp.svg';
 export { default as figma } from './collaboration/figma.png';
 export { default as framer } from './collaboration/framer.png';
 export { default as notion } from './collaboration/notion.png';

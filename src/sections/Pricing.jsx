@@ -5,33 +5,42 @@ import Button from "../components/Button";
 
 const pricing = [
     {
-        title: "Básico",
-        description: "Chatbot com IA básica e recomendações personalizadas",
-        price: "0",
+        title: "Starter",
+        description: "Automatize suas vendas e multiplique seus resultados com IA",
+        price: "526",
         features: [
-            "Chatbot com IA para atendimento básico",
-            "Recomendações personalizadas",
-            "Integração com WhatsApp",
+            "Integração com WhatsApp, Instagram e Messenger",
+            "Sistema de vendas automatizado com geração de PIX",
+            "Prospecção automática de leads",
+            "Atendimento ao cliente 24/7",
+            "Integração com email e SMS",
+            "Aumento comprovado nas vendas",
         ],
     },
     {
-        title: "Premium",
-        description: "Chatbot avançado, suporte prioritário, dashboard analítico",
-        price: "299",
+        title: "Profissional",
+        description: "Potencialize seu negócio com automação completa e IA avançada",
+        price: "1270",
         features: [
-            "Chatbot com IA avançada para consultas complexas",
-            "Dashboard analítico completo",
-            "Suporte prioritário 24/7",
+            "Call center de vendas 100% automatizado",
+            "Sistema de autoaprimoramento em vendas",
+            "Integração com telefonia e múltiplos canais",
+            "Cobranças automáticas (PIX, Cartão, Boleto)",
+            "Gestão completa de leads e clientes",
+            "Aumento superior a 1250% nas vendas",
         ],
     },
     {
-        title: "Empresarial",
-        description: "Chatbot personalizado, análise avançada, conta dedicada",
+        title: "Enterprise",
+        description: "Solução personalizada para grandes operações com resultados extraordinários",
         price: null,
         features: [
-            "Chatbot totalmente personalizado",
-            "Análise avançada de dados",
-            "Gerente de conta dedicado",
+            "Sistema completo de vendas automatizadas",
+            "IA treinada especificamente para seu negócio",
+            "Integração com todos os canais de comunicação",
+            "Dashboard analítico avançado",
+            "Gerente de conta dedicado 24/7",
+            "ROI garantido com métricas personalizadas",
         ],
     },
 ];
@@ -47,7 +56,10 @@ const Pricing = () => {
                     </div>
                 </div>
 
-                <Heading tag="Comece com a Perseu.AI" title="Planos para cada necessidade" />
+                <Heading 
+                    tag="Multiplique suas vendas com a Perseu.AI" 
+                    title="Escolha o plano ideal para revolucionar seu negócio" 
+                />
 
                 <div className="relative">
                     <div className="flex gap-[1rem] max-lg:flex-wrap">
@@ -58,11 +70,15 @@ const Pricing = () => {
                                 <p className="body-2 min-h-[4rem] mb-3 text-white/50">{item.description}</p>
 
                                 <div className="flex items-center h-[5.5rem] mb-6">
-                                    {item.price && (
+                                    {item.price ? (
                                         <>
-                                            <div className="h3">R$</div>
+                                            <div className="body-2 text-n-4">A partir de</div>
+                                            <div className="h3 ml-2">R$</div>
                                             <div className="text-[5.5rem] leading-none font-bold">{item.price}</div>
+                                            <div className="body-2 text-n-4 ml-2">/mês</div>
                                         </>
+                                    ) : (
+                                        <div className="body-2 text-n-4">Personalizado para sua empresa</div>
                                     )}
                                 </div>
 
