@@ -1,4 +1,4 @@
-import { openai, check, curve1, curve2, discord, whatsapp, framer, notion, photoshop, protopie, raindrop, slack } from "../assets";
+import { check, curve1, curve2, discord, whatsapp, framer, notion, photoshop, protopie, raindrop, slack, justlogo } from "../assets";
 import Button from "../components/Button";
 import Section from "../components/Section";
 
@@ -100,7 +100,13 @@ const Collaboration = () => {
                         <div className="flex w-[15rem] md:w-60 aspect-square m-auto border border-n-6 rounded-full">
                             <div className="w-[5rem] md:w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
                                 <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
-                                    <img src={openai} width={48} height={48} alt="OpenAI" className="w-10 h-10 md:w-12 md:h-12" />
+                                    <img 
+                                        src={justlogo} 
+                                        width={48} 
+                                        height={48} 
+                                        alt="PerseuAI" 
+                                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                                    />
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import { curve, file02, heroBackground, homeSmile, loading, plusSquare, robot, searchMd, yourlogo, nexbotRobot, sunset, voxuy, mailchamp, leadlovers } from "../assets";
-import { slide1, slide2, slide3, slide4 } from "../assets";
+import { slide0, slide1, slide2, slide3, slide4 } from "../assets";
 import Button from "../components/Button";
 import Section from "../components/Section";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
@@ -60,6 +60,7 @@ const loadingIconStyle = {
 };
 
 const slides = [
+    { image: slide0, alt: "Slide 0" },
     { image: slide1, alt: "Slide 1" },
     { image: slide2, alt: "Slide 2" },
     { image: slide3, alt: "Slide 3" },

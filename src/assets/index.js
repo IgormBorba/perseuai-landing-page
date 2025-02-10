@@ -5,6 +5,7 @@ export { default as heroBackground } from './hero/hero-background.jpg';
 export { default as nexbotRobot } from './hero/nexbot-robot-character-concept.mp4';
 
 // Slides Section
+export { default as slide0 } from './slides/slide0.png';
 export { default as slide1 } from './slides/slide1.png';
 export { default as slide2 } from './slides/slide2.png';
 export { default as slide3 } from './slides/slide3.png';
@@ -76,6 +77,7 @@ export { default as twitter } from './socials/twitter.svg';
 
 // General Imports
 export { default as openai } from './openai.png';
+export { default as justlogo } from './justlogo.png';
 export { default as check } from './check.svg';
 export { default as check2 } from './check-02.svg';
 export { default as loading1 } from './loading-01.svg';
